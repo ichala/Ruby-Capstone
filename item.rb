@@ -1,5 +1,4 @@
 require 'date'
-require_relative './author'
 
 class Item
   attr_accessor :id, :publish_date, :archived
