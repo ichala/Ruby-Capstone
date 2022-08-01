@@ -1,4 +1,4 @@
-class author
+class Author
     attr_reader :items
     def initialize
         @items=[]
@@ -6,7 +6,8 @@ class author
 
     def add_item(item)
         @items.push(item)
-        item.add_author(self)
+        item.add_author= self
     end
 
 end
+

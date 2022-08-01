@@ -1,4 +1,5 @@
 require 'date'
+require_relative './author'
 
 class Item
   attr_accessor :id, :publish_date, :archived
@@ -35,3 +36,4 @@ class Item
     @archived = true if can_be_archived?
   end
 end
+
