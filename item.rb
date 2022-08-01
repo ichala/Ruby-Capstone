@@ -4,10 +4,10 @@ class Item
   attr_accessor :id, :publish_date, :archived
   attr_reader :label, :genre, :author, :source
 
-  def initialize(id, publish_date, archived :false)
+  def initialize(id, publish_date, archived)
     @id = id
     @publish_date = publish_date
-    @archived = archived
+    @archived = false
   end
 
   def add_genre(genre)
@@ -31,6 +31,6 @@ class Item
   end
 
   def move_to_archive
-    @archived = true unless can_be_archived?==false
+    @archived = true if can_be_archived?
   end
 end
