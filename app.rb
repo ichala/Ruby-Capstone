@@ -5,16 +5,20 @@ require_relative './classes/game'
 require_relative './classes/author'
 require_relative './modules/author_module'
 require_relative './modules/game_module'
+require_relative './classes/label'
+require_relative './modules/label_module'
 
 class App
   include BooksData
   include AuthorData
   include GameData
+  include LabelsData
   def initialize
     @books = load_books
     @add_book_details = load_books
     @games = load_games
     @authors = load_authors
+    @labels = load_labels
   end
 
   def options(user_input)
@@ -24,13 +28,16 @@ class App
     when '2'
       add_book
     when '3'
-      list_games
+     list_labels
     when '4'
-      list_authors
+    list_games
     when '5'
-      add_game
+     list_authors
     when '6'
+     add_game
+      when '7'
       add_author
+
     end
   end
 
@@ -41,14 +48,18 @@ class App
     print 'Please, type the book publisher: '
     publisher = gets.chomp
 
+    print 'Please, type the book label: '
+    label = gets.chomp
+    print 'Please, type the label color: '
+    color = gets.chomp
     print 'Please, type the book cover state: '
     cover_state = gets.chomp
-
     print 'Date of publish [Enter date in format (yyyy-mm-dd)]: '
     publish_date = gets.chomp
     return unless publish_date
 
     @books.push(Book.new(title, publisher, cover_state, publish_date))
+    @labels << Label.new(Random.rand(1..100), label, color)
     puts 'Book created successfully'
   end
 
@@ -88,4 +99,11 @@ class App
     @authors.push(Author.new(first_name, last_name))
     save_authors
   end
+   def list_labels
+    puts 'There are no labels' if @labels.empty?
+    @labels.each do |label|
+      puts "ID: #{label.id}, Title: #{label.title} , Color: #{label.color}"
+    end
+  end
+
 end
