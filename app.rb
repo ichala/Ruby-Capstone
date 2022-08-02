@@ -13,8 +13,8 @@ class App
   def initialize
     @books = load_books
     @add_book_details = load_books
-    @games=load_games
-    @authors= load_authors
+    @games = load_games
+    @authors = load_authors
   end
 
   def options(user_input)
@@ -64,29 +64,28 @@ class App
       p "multiplayer:#{game.multiplayer} last_played_at:#{game.last_played_at}"
     end
   end
+
   def list_authors
     @authors.each do |author|
       p "first_name:#{author.first_name} last_name:#{author.last_name}"
-      author.items.each do |item|
-        p " publish_date:#{item.publish_date} archived:#{item.archived}"
-      end
     end
   end
+
   def add_game
     puts 'Enter multiplayer'
-    multiplayer=gets.chomp
+    multiplayer = gets.chomp
     puts 'Enter last_played_at(yyyy-mm-dd)'
-    last_played_at=gets.chomp
-    @games.push(Game.new(multiplayer,last_played_at))
+    last_played_at = gets.chomp
+    @games.push(Game.new(multiplayer, last_played_at))
     save_games
   end
 
   def add_author
     puts 'Enter first_name'
-    first_name=gets.chomp
+    first_name = gets.chomp
     puts 'Enter last_name'
-    last_name=gets.chomp
-    @authors.push(Author.new(first_name,last_name))
+    last_name = gets.chomp
+    @authors.push(Author.new(first_name, last_name))
     save_authors
   end
 end
