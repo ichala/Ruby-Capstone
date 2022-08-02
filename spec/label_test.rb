@@ -23,6 +23,5 @@ describe Label do
       label_item = Label.new(22, 'TEST LABEL NAME', 'RED')
       expect(label_item.title).to eq 'TEST LABEL NAME'
     end
-
   end
 end
