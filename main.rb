@@ -9,6 +9,7 @@ class Main
     puts 'Please select 1 option below
         1 - List all books
         2 - Add a book
+        3 - List all labels (e.g "Gift", "New")
         99 - Exit
         '
   end
@@ -21,6 +22,7 @@ class Main
       @app.options(input)
     end
     @app.save_books
+    @app.save_labels
     puts 'All Data Saved Have a nice day !'
   end
 end
