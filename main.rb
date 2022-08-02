@@ -14,6 +14,10 @@ class Main
         5 - List all authors
         6 - Add a game
         7 - Add an author
+        8 - List all music albums
+        9 - List all genres
+        10 - Add a music album
+
         99 - Exit
         '
   end
@@ -27,6 +31,8 @@ class Main
     end
     @app.save_books
     @app.save_labels
+    @app.save_music_album
+    @app.save_genre
     puts 'All Data Saved Have a nice day !'
   end
 end
