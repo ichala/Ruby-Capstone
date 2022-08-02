@@ -10,6 +10,10 @@ class Main
         1 - List all books
         2 - Add a book
         3 - List all labels (e.g "Gift", "New")
+        4 - List all games
+        5 - List all authors
+        6 - Add a game
+        7 - Add an author
         99 - Exit
         '
   end
