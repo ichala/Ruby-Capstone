@@ -8,7 +8,7 @@ module MusicAlbumModule
     file = './json_db/genres.json'
     if File.exist?(file) && File.read(file) != ''
       JSON.parse(File.read(file)).each do |genre|
-        data.push(Genre.new(genre['id'], genre['name']))
+        data.push(Genre.new(genre['name'], genre['id']))
       end
     else
       File.write(file, [])
@@ -20,8 +20,8 @@ module MusicAlbumModule
   def save_genre
     data = []
     @music_albums.each do |genre|
-      data.push({ id: genre.id, name: genre.name })
+      data.push({ name: genre.name, id: genre.id })
     end
-    open('./json_db/genres.json', 'w') { |f| f << JSON.generate(data) }
+    File.write('./json_db/genres.json', JSON.generate(data))
   end
 end
