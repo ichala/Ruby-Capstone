@@ -1,4 +1,5 @@
 require_relative '../classes/author'
+require_relative '../app'
 require 'json'
 require 'date'
 
@@ -16,6 +17,7 @@ module AuthorData
 
   def save_authors
     data = []
+    p @authors
     @authors.each do |author|
       data.push({ first_name: author.first_name, last_name: author.last_name })
     end

@@ -78,6 +78,7 @@ class App
     puts 'Enter last_played_at(yyyy-mm-dd)'
     last_played_at=gets.chomp
     @games.push(Game.new(multiplayer,last_played_at))
+    save_games
   end
 
   def add_author
@@ -86,5 +87,6 @@ class App
     puts 'Enter last_name'
     last_name=gets.chomp
     @authors.push(Author.new(first_name,last_name))
+    save_authors
   end
 end
