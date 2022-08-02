@@ -7,18 +7,25 @@ require_relative './modules/author_module'
 require_relative './modules/game_module'
 require_relative './classes/label'
 require_relative './modules/label_module'
+require_relative './classes/genre'
+require_relative './classes/music_album'
+require_relative './modules/genre_module'
+require_relative './modules/music_album_module'
 
 class App
   include BooksData
   include AuthorData
   include GameData
   include LabelsData
+  include MusicAlbumModule
   def initialize
     @books = load_books
     @add_book_details = load_books
     @games = load_games
     @authors = load_authors
     @labels = load_labels
+    @music_albums = load_music_albums
+    @load_genres = load_genres
   end
 
   # rubocop:disable Metrics/CyclomaticComplexity
@@ -38,6 +45,12 @@ class App
       add_game
     when '7'
       add_author
+    when '8'
+      list_all_music_album
+    when '9'
+      list_all_genres
+    when '10'
+      add_music_album
     end
   end
   # rubocop:enable Metrics/CyclomaticComplexity
@@ -106,5 +119,33 @@ class App
     @labels.each do |label|
       puts "ID: #{label.id}, Title: #{label.title} , Color: #{label.color}"
     end
+  end
+
+  def list_all_music_album
+    puts 'Music Albums'
+    @music_albums.each do |albums|
+      puts "Name: #{albums.name}, Publish Date: #{albums.publish_date}, On Spotify: #{albums.on_spotify}"
+    end
+  end
+
+  def list_all_genres
+    puts 'Genres:'
+    @load_genres.each do |genre|
+      puts "Genre name: #{genre.name}"
+    end
+  end
+
+  def add_music_album
+    puts 'Album name: '
+    name = gets.chomp
+
+    puts 'Date of publish [Enter date in format (yyyy-mm-dd)]'
+    publish_date = gets.chomp
+
+    puts 'Is it available on Spotify? Y/N'
+    on_spotify = gets.chomp.downcase == 'y' || false
+
+    @music_albums.push(MusicAlbum.new(name, publish_date, on_spotify))
+    puts 'Music album created'
   end
 end
