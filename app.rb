@@ -4,14 +4,16 @@ require_relative './modules/book_module'
 require_relative './classes/game'
 require_relative './classes/author'
 require_relative './modules/author_module'
+require_relative './modules/game_module'
 
 class App
   include BooksData
   include AuthorData
+  include GameData
   def initialize
     @books = load_books
     @add_book_details = load_books
-    @games=[]
+    @games=load_games
     @authors= load_authors
   end
 
