@@ -130,6 +130,7 @@ class App
 
   def list_all_genres
     puts 'Genres:'
+    puts @load_genres
     @load_genres.each do |genre|
       puts "Genre name: #{genre.name}"
     end
