@@ -1,13 +1,10 @@
 require 'date'
 
 class Item
-  attr_accessor :id, :name
-  attr_reader :label, :genre, :author, :source, :publish_date, :archived
+  attr_reader :label, :genre, :author, :source, :publish_date, :archived, :id
 
-  def initialize(_id, publish_date)
-    @id = Random.rand(1..100)
-    @name = name
-    @archived = archived
+  def initialize(id, publish_date)
+    @id = id
     @publish_date = publish_date
     @archived = false
   end
