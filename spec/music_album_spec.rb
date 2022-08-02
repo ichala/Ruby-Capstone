@@ -4,7 +4,7 @@ require '../item'
 
 describe MusicAlbum do
   before :each do
-    @music = MusicAlbum.new 'name', '2010-12-05', true
+    @music = MusicAlbum.new 'name', Date.parse('2010-12-05'), true
   end
 
   it 'music should be an instance of Music class' do
