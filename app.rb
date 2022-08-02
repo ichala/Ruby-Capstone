@@ -21,6 +21,7 @@ class App
     @labels = load_labels
   end
 
+  # rubocop:disable Metrics/CyclomaticComplexity
   def options(user_input)
     case user_input
     when '1'
@@ -37,9 +38,9 @@ class App
       add_game
     when '7'
       add_author
-
     end
   end
+  # rubocop:enable Metrics/CyclomaticComplexity
 
   def add_book
     print 'Please, type the book title: '
