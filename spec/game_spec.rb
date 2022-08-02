@@ -1,5 +1,5 @@
-require_relative '../classes/game'
 require 'date'
+require_relative '../classes/game'
 
 describe Game do
   context 'Game class' do

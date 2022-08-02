@@ -15,7 +15,7 @@ describe Author do
 
   it 'should be able to add an item' do
     author = Author.new('kwambiee', 'Joyous')
-    item = Item.new(Date.new(2010, 10, 10))
+    item = Item.new(1, Date.new(2010, 10, 10))
     author.add_item(item)
     expect(author.items).to eq([item])
   end
