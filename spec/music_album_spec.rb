@@ -1,6 +1,5 @@
 require 'date'
 require_relative '../classes/music_album'
-require '../item'
 
 describe MusicAlbum do
   before :each do
