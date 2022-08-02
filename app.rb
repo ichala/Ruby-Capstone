@@ -28,14 +28,14 @@ class App
     when '2'
       add_book
     when '3'
-     list_labels
+      list_labels
     when '4'
-    list_games
+      list_games
     when '5'
-     list_authors
+      list_authors
     when '6'
-     add_game
-      when '7'
+      add_game
+    when '7'
       add_author
 
     end
@@ -99,11 +99,11 @@ class App
     @authors.push(Author.new(first_name, last_name))
     save_authors
   end
-   def list_labels
+
+  def list_labels
     puts 'There are no labels' if @labels.empty?
     @labels.each do |label|
       puts "ID: #{label.id}, Title: #{label.title} , Color: #{label.color}"
     end
   end
-
 end
