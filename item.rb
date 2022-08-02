@@ -1,11 +1,13 @@
 require 'date'
 
 class Item
-  attr_accessor :id, :publish_date, :archived, :name
-  attr_reader :label, :genre, :author, :source
+  attr_accessor :publish_date, :archived, :id, :name
+  attr_reader :label, :genre, :author
 
   def initialize(id, publish_date)
-    @id = id
+    @id = Random.rand(1..100)
+    @name = name
+    @archived = archived
     @publish_date = publish_date
     @archived = false
   end
@@ -19,8 +21,9 @@ class Item
     author.add_item(self)
   end
 
-  def add_label(label)
-    @label = label
+  def label=(label)
+    @label = label.title
+    label.items << self unless label.items.include?(self)
   end
 
   def add_source(source)
