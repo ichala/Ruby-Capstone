@@ -9,10 +9,10 @@ class Main
     puts 'Please select 1 option below
         1 - List all books
         2 - Add a book
-        3 - List all games
-        4 - List all authors
-        5 - Add a game
-        6 - Add an author
+        4 - List all games
+        5 - List all authors
+        6 - Add a game
+        7 - Add an author
         99 - Exit
         '
   end
