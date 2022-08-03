@@ -32,25 +32,25 @@ class App
   def options(user_input)
     case user_input
     when '1'
-      list_books
-    when '2'
-      add_book
-    when '3'
-      list_labels
-    when '4'
-      list_games
-    when '5'
-      list_authors
-    when '6'
       add_game
-    when '7'
+    when '2'
       add_author
-    when '8'
-      list_all_music_album
-    when '9'
-      list_all_genres
-    when '10'
+    when '3'
       add_music_album
+    when '4'
+      add_book
+    when '5'
+      list_books
+    when '6'
+      list_labels
+    when '7'
+      list_games
+    when '8'
+      list_authors
+    when '9'
+      list_all_music_album
+    when '10'
+      list_all_genres
     end
   end
   # rubocop:enable Metrics/CyclomaticComplexity

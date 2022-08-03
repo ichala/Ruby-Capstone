@@ -7,17 +7,17 @@ class Main
 
   def options
     puts 'Please select 1 option below
-        1 - List all books
-        2 - Add a book
-        3 - List all labels (e.g "Gift", "New")
-        4 - List all games
-        5 - List all authors
-        6 - Add a game
-        7 - Add an author
-        8 - List all music albums
-        9 - List all genres
-        10 - Add a music album
-
+        1 - Add a game
+        2 - Add an author
+        3 - Add a music album
+        4 - Add a book
+        5 - List all books
+        6 - List all labels
+        7 - List all games
+        8 - List all authors
+        9 - List all music albums
+        10 - List all genres
+        ---------
         99 - Exit
         '
   end
