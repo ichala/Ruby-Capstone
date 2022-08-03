@@ -9,6 +9,6 @@ class Game < Item
   end
 
   def can_be_archived?
-    (Date.today.year - @last_played_at.year) > 2
+    super || (Date.today.year - @last_played_at.year) > 2
   end
 end
