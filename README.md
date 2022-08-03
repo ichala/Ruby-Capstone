@@ -34,7 +34,7 @@
 
 #### Logic
 
-    - Each class from the [UML class diagram](./images/catalog_of_my_things.png) should be created in a separate .rb file.
+    - Each class from the [UML class diagram](./assets/catalog_of_my_things.png) should be created in a separate .rb file.
     - All associations (1-to-many relationships) and aggregations (parent-child relationships) between classes should be implemented.
     - All properties visible in the diagram should be defined and set up in the constructor method. _Exception: properties for the 1-to-many relationships should NOT be set in the constructor method. Instead, they should have a custom setter method created._
     - All methods visible in the diagram should be implemented:
