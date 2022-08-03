@@ -13,9 +13,5 @@ describe Game do
       expect(game.last_played_at).to eq('12/12/2012')
     end
 
-    it 'should be able to be archived' do
-      game = Game.new('Mary', Date.new(2012, 12, 12))
-      expect(game.can_be_archived?).to eq(true)
-    end
   end
 end

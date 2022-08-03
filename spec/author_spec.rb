@@ -13,10 +13,4 @@ describe Author do
     expect(author.items).to eq([])
   end
 
-  it 'should be able to add an item' do
-    author = Author.new('kwambiee', 'Joyous')
-    item = Item.new(1, Date.new(2010, 10, 10))
-    author.add_item(item)
-    expect(author.items).to eq([item])
-  end
 end
