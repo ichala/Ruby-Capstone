@@ -12,5 +12,4 @@ describe Author do
     author = Author.new('kwambiee', 'Joyous')
     expect(author.items).to eq([])
   end
-
 end

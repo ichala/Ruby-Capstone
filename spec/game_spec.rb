@@ -12,6 +12,5 @@ describe Game do
       game = Game.new('Mary', '12/12/2012')
       expect(game.last_played_at).to eq('12/12/2012')
     end
-
   end
 end
